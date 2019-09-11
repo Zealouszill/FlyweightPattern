@@ -65,10 +65,9 @@ namespace FlyweightPattern
                 // Add our alien model to our dictionary.
                 AlienArmy.Add(alienSpecies, newAlien);
 
-
             }
 
-            **********************************
+            /**********************************
              Code Segment show the longer time
             **********************************/
 
