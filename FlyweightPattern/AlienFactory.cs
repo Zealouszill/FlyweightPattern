@@ -29,6 +29,10 @@ namespace FlyweightPattern
             // Create out alien.
             IAlien newAlien = null;
 
+            /***********************************
+             Code Segment show the shorter time
+            ***********************************
+
             // If the alien model already exists, use it. Otherwise make a new one.
             if (AlienArmy.ContainsKey(alienSpecies))
             {
@@ -60,7 +64,35 @@ namespace FlyweightPattern
 
                 // Add our alien model to our dictionary.
                 AlienArmy.Add(alienSpecies, newAlien);
+
+
             }
+
+            **********************************
+             Code Segment show the longer time
+            **********************************/
+
+            switch (alienSpecies)
+            {
+                // Create a Brawny Alien.
+                case "BrawnyAlien":
+                    newAlien = new BrawnyAlien();
+                    newAlien.SetPowerup("Super Strength");
+                    break;
+
+                // Create a Big Brain Alien.
+                case "BigBrainAlien":
+                    newAlien = new BigBrainAlien();
+                    newAlien.SetPowerup("Telekenesis");
+                    break;
+
+                // Obligatory default statement.
+                default:
+                    Console.WriteLine("Factory has made an illegal Alien spawn request.");
+                    break;
+            }
+
+            /**********************************/
 
             // Return the alien to the called function.
             return newAlien;
